@@ -1,0 +1,245 @@
+<?php include("../../../config.php"); ?>
+
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+
+<style>
+    .ui-datepicker-calendar {
+        display: none;
+    }
+</style>
+
+<script>
+    function isNumberKey(evt)
+    {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+</script>
+
+<div class="card">
+    <div id="mmsuccess_loc"></div>
+    <div id="merror_loc"></div>
+    <h5 class="card-header">Add Partner Record</h5>
+    <form name="branch_form" method="post" autocomplete="off">
+        <div class="card-body">
+
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Date Paid</label>
+                        <input type="text" class="form-control" id="date_paid"
+                               placeholder="Select Date" value="<?php echo date("Y-m-d"); ?>">
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Member Name</label>
+                        <input type="text" class="form-control" id="member_name" placeholder="Select Member">
+                        <input type="hidden" id="memberid"/>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            Partnership payment for
+
+            <hr/>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Purpose</label>
+                        <textarea class="form-control" id="purpose"
+                                  placeholder="Enter Purpose"></textarea>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Amount</label>
+                        <input type="text" id="amount" class="form-control"
+                               placeholder="Enter amount" onkeypress="return isNumberKey(event)">
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="card-footer bg-light">
+            <button type="button" class="btn btn-primary" id="save_mpcontributions">Submit</button>
+
+        </div>
+    </form>
+</div>
+
+
+<script>
+
+    ;
+
+    $("#member_name").autocomplete({
+        source: "ajax/forms/namesearch_mp.php",
+        minLength: 0,
+        select: function (event, ui) {
+            $("#member_name").val(ui.item.value);
+            $("#memberid").val(ui.item.id);
+        }
+    });
+
+    $("#date_paid").flatpickr();
+
+
+
+    //SAVE contributions
+    $("#save_mpcontributions").click(function () {
+
+        var date_paid = $("#date_paid").val();
+        var memberid = $("#memberid").val();
+        var purpose = $("#purpose").val();
+        var amount = $("#amount").val();
+
+
+        var error = '';
+
+        if (memberid == "") {
+            error += 'Please select member \n';
+            $("#member_name").focus();
+        }
+
+        if (date_paid == "") {
+            error += 'Please select date paid \n';
+        }
+
+        if (purpose == "") {
+            error += 'Please enter purpose \n';
+            $("#purpose").focus();
+        }
+
+        if (amount == "") {
+            error += 'Please enter amount \n';
+            $("#amount").focus();
+        }
+
+        if (error == "") {
+
+
+            $.ajax({
+                type: "POST",
+                url: "ajax/queries/save_mpcontributions.php",
+                beforeSend: function () {
+                    $.blockUI({
+                        message: '<img src="assets/img/load.gif" />'
+                    });
+                },
+                data: {
+
+                    date_paid: date_paid,
+                    memberid: memberid,
+                    purpose: purpose,
+                    amount: amount
+
+                },
+                success: function (text) {
+
+                    //alert(text);
+
+                    $('#mmsuccess_loc').notify("Form submitted", "success");
+
+                    $.ajax({
+                        url: "ajax/tables/mp_table.php",
+                        beforeSend: function () {
+                            $.blockUI({
+                                message: '<img src="assets/img/load.gif" />'
+                            });
+                        },
+
+                        success: function (text) {
+                            $('#mp_table_div').html(text);
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + " " + thrownError);
+                        },
+                        complete: function () {
+                            $.unblockUI();
+                        },
+
+                    });
+
+                    $.ajax({
+                        url: "ajax/forms/mp_form.php",
+                        beforeSend: function () {
+                            $.blockUI({
+                                message: '<img src="assets/img/load.gif" />'
+                            });
+                        },
+
+                        success: function (text) {
+                            $('#mp_form_div').html(text);
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert(xhr.status + " " + thrownError);
+                        },
+                        complete: function () {
+                            $.unblockUI();
+                        },
+
+                    });
+
+
+                },
+
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + " " + thrownError);
+                },
+                complete: function () {
+                    $.unblockUI();
+                },
+
+            });
+
+
+        }
+        else {
+
+
+            $('#merror_loc').notify(error);
+
+        }
+        return false;
+
+
+    });
+
+
+</script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+-->

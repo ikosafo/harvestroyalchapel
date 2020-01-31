@@ -1,0 +1,25 @@
+/*Home 1 Color css*/
+
+
+.single-feature-item li:hover h5,
+.blog-author:hover,
+.text-color,
+.header-nav .menu > li.active > a,
+.header-nav .menu > li > a:hover,
+.app-button li span,
+.app-button li a p,
+.app-button li a i {
+	color: #2e82ff !important;
+}
+.popup-video,
+.shape,
+.app-button li a:hover,
+.header-nav .menu > li.active > a:after,
+.header-nav .menu > li > a:after{
+	background-color: #2e82ff;
+}
+
+ {
+	border-color: #2e82ff;
+}
+ 

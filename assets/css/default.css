@@ -1,0 +1,223 @@
+ 
+/*Template:  Endlessness - App landing Mobile Bootstrap 4 Html Template
+Author: Theme-rocket
+Author URI: https://themeforest.net/user/theme-rocket/portfolio 
+Version:  1.0
+Description:  
+*/
+/*-------------------------------------------------------
+1. Theme default css
+---------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Poppins:300,400,500,600');
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    color: #928f9e;  
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+.wrapper {
+    overflow: hidden;
+}
+.img {
+    max-width: 100%;
+    transition: all 0.3s ease-out 0s;
+}
+
+.team-member-content,
+.team-member-single-item,
+.price-head:after,
+.price-head,
+.services-style2 .single-service-item,
+.services-style2 .single-service-item p,
+.services-style2 .single-service-item h5,
+.nav-style2,
+.header-nav-area,
+.feature-title h5,
+.service-style3 .single-service-item,
+.single-service-item,
+.header-nav,
+a.btn-primary,
+.blog-post-cntent h5,
+.carousel-control-prev span,
+.single-blog-post,
+.carousel-control-next span,
+.partner-thumbnail,
+.team-thumbnail:after,
+.social-icon,
+.single-service-item,
+.app-button li a span, 
+.app-button li a p,
+.app-button li a i,
+.header-nav .menu > li > a:after,
+.header-nav .menu > li > a,
+a.btn,
+.btn,
+a,
+.button {
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+} 
+a:focus,
+a:hover,
+.button:focus {
+    text-decoration: none;
+    outline: none;
+    color: #2e82ff;
+}
+.portfolio-cat a:hover,
+.footer-menu li a:hover {
+    color: #D6B161;
+    text-decoration: none;
+}
+:focus {
+    outline: none;
+}
+a,
+button {
+    outline: medium none;
+    color: #337ab7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: #212121;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.06875rem;
+    line-height: 2em;
+    text-transform: capitalize;
+}
+.class-name h1,
+.class-name h2,
+.class-name h3,
+.class-name h4,
+.class-name h5,
+.class-name h6 {
+    color: #ffffff;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 28px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 16px;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    list-style: none
+}
+.list-inline{
+    display: inline-flex;
+    list-style: none; 
+}
+.list-inline li{
+    display: inline-block;
+} 
+p {
+    color: #737373;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 27px;
+    margin-bottom: 20px;
+}
+
+*::-moz-selection {
+    background: #2e82ff;
+    color: #fff;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: #2e82ff;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #2e82ff;
+    color: #fff;
+    text-shadow: none;
+}
+*::-moz-placeholder {
+    color: #555555;
+    font-size: 14px;
+    opacity: 1;
+}
+*::placeholder {
+    color: #555555;
+    font-size: 14px;
+    opacity: 1;
+}
+
+.mb-50 {
+    margin-bottom: 60px;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+.mb-80 {
+    margin-bottom: 80px;
+}
+.mb-90 {
+    margin-bottom: 90px;
+}
+.bg-light{
+	background-color: #ecf5f6;
+}
+.bg-dark{
+    background-color: #0f1129;
+} 
+.has-color h1,
+.has-color h2,
+.has-color h3,
+.has-color h4,
+.has-color h5,
+.has-color h6,
+.has-color p{
+    color: #ffffff !important;
+}
+/*-------------------------------------------------------
+  1.1 Background color variation for section
+---------------------------------------------------------*/
