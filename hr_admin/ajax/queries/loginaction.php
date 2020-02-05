@@ -5,7 +5,7 @@ $username = mysqli_real_escape_string($mysqli, $_POST['username']);
 $pass = mysqli_real_escape_string($mysqli, $_POST['password']);
 $password = md5($pass);
 
-$res = $mysqli->query("SELECT * FROM users_adminmain WHERE `username` = '$username' 
+$res = $mysqli->query("SELECT * FROM `users_adminmain` WHERE `username` = '$username'
                                        AND `password` = '$password'");
 $getdetails = $res->fetch_assoc();
 $rowcount = mysqli_num_rows($res);
@@ -26,9 +26,7 @@ if ($rowcount == "0") {
 
 } else {
 
-
     echo 1;
-
 
 }
 

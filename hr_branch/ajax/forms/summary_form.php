@@ -36,7 +36,7 @@ $result = $app->fetch_assoc();
                                  style="border: 0 !important;"/>
                         </div>
                         <div class="col-md-10" align="center">
-                            <h2 style="font-weight: bold;">CHRIST VISION SANCTUARY INTERNATIONAL</h2>
+                            <h2 style="font-weight: bold;">HARVEST ROYAL CHAPEL WORLDWIDE</h2>
                             <h4 style="text-transform: uppercase"><?php $branchid = $result['branch'];
                                 $getb = $mysqli->query("select * from branch where id = '$branchid'");
                                 $resb = $getb->fetch_assoc();

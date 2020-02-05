@@ -1,6 +1,10 @@
 <?php include ('../config.php');
 session_destroy();
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +13,7 @@ session_destroy();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Church Admin System | Christ Vision Sanctuary Int.</title>
+    <title>Church Admin System | Harvest Royal Chapel Worldwide</title>
     <!-- ================== GOOGLE FONTS ==================-->
     <link href="https@fonts.googleapis.com/css@family=Poppins_3A300,400,500" rel="stylesheet">
     <!-- ======================= GLOBAL VENDOR STYLES ========================-->
@@ -135,6 +139,7 @@ session_destroy();
 <script>
 
     $('#login_btn').click(function () {
+        //alert('hi');
         var username = $('#username').val();
         var password = $('#password').val();
         var error = '';
@@ -156,9 +161,9 @@ session_destroy();
                     password: password
                 },
                 success: function (text) {
-                    //alert(text)
+                    //alert(text);
                     if (text == 1) {
-                        window.location.href = "/cv_admin";
+                        window.location.href = "/hr_admin/";
                     }
                     else {
                         $('#error_loc').notify("Username or password does not exist", "error");

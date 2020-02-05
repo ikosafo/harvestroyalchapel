@@ -2,7 +2,7 @@
 
 //$branch = $_SESSION['branch'];
 
-$getmember = $mysqli->query("select * from member where status IS NULL ORDER by branch,surname,firstname,othername");
+$getmember = $mysqli->query("select * from `member` where status IS NULL ORDER by branch,surname,firstname,othername");
 
 ?>
 <style>

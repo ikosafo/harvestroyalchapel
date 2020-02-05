@@ -1,4 +1,5 @@
-<?php require ('includes/header.php'); ?>
+<?php require ('includes/header.php');
+?>
 
             <!--START PAGE CONTENT -->
             <section class="page-content container-fluid">
@@ -12,7 +13,7 @@
                                             <i class="icon icon-people"></i>
                                         </div>
                                         <h5 class="card-title m-b-5 counter" data-count="
-                                        <?php $getnum = $mysqli->query("select * from member");
+                                        <?php $getnum = $mysqli->query("select * from `member`");
                                         echo $count = mysqli_num_rows($getnum); ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
                                             Member(s)
@@ -25,7 +26,7 @@
                                             <i class="icon dripicons-user"></i>
                                         </div>
                                         <h5 class="card-title m-b-5 counter"
-                                            data-count="<?php $getnumm = $mysqli->query("select * from member where gender = 'Male'");
+                                            data-count="<?php $getnumm = $mysqli->query("select * from `member` where gender = 'Male'");
                                             echo mysqli_num_rows($getnumm);
                                             ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
@@ -39,7 +40,7 @@
                                             <i class="icon icon-user-female"></i>
                                         </div>
                                         <h5 class="card-title m-b-5 counter" data-count="
-<?php $getnumf = $mysqli->query("select * from member where gender = 'Female'");
+<?php $getnumf = $mysqli->query("select * from `member` where gender = 'Female'");
                                         echo mysqli_num_rows($getnumf);
                                         ?>">0</h5>
                                         <h6 class="text-muted m-t-10">
@@ -55,7 +56,7 @@
                                         </div>
                                         <h5 class="card-title m-b-5 counter" data-count="
 
-<?php $getnums = $mysqli->query("select * from member where maritalstatus = 'Single'");
+<?php $getnums = $mysqli->query("select * from `member` where maritalstatus = 'Single'");
                                         echo mysqli_num_rows($getnums);
                                         ?>">0</h5>
                                         <h6 class="text-muted m-t-10">

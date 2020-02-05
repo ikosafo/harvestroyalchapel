@@ -58,9 +58,9 @@
 
                         <ul class="app-button list-inline w-400">
 
-                            <li><a href="/cv_member/"><p><span>HRCW Member</span>Login</p></a></li>
-                            <li><a href="/cv_branch/"><p><span>Branch Administrator</span>Login</p></a></li>
-                            <li><a href="/cv_admin/"><p><span>Main Administrator</span>Login</p></a></li>
+                            <li><a href="/hr_member/"><p><span>HRCW Member</span>Login</p></a></li>
+                            <li><a href="/hr_branch/"><p><span>Branch Administrator</span>Login</p></a></li>
+                            <li><a href="/hr_admin/"><p><span>Main Administrator</span>Login</p></a></li>
 
                         </ul>
 
